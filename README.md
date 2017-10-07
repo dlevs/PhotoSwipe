@@ -1,3 +1,10 @@
+This is a fork of github user dimsemenov's photoswipe module.
+
+It adds a fix for this issue:
+https://github.com/dimsemenov/PhotoSwipe/issues/1198
+
+I haven't created a pull request as the fix relies on `Element.closest()`, which is not supported in IE11.
+
 # PhotoSwipe Repository 
 
 [![Build Status](https://travis-ci.org/dimsemenov/PhotoSwipe.svg)](https://travis-ci.org/dimsemenov/PhotoSwipe) 
