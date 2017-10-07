@@ -41,6 +41,11 @@ _registerModule('Tap', {
 				return;
 			}
 
+			var clickedTagName = e.target.tagName.toUpperCase();
+			if (clickedTagName === 'A') {
+				return;
+			}
+
 			if(!_moved && !_isMultitouch && !_numAnimations) {
 				var p0 = releasePoint;
 				if(tapTimer) {
@@ -59,7 +64,6 @@ _registerModule('Tap', {
 					return;
 				}
 
-				var clickedTagName = e.target.tagName.toUpperCase();
 				// avoid double tap delay on buttons and elements that have class pswp__single-tap
 				if(clickedTagName === 'BUTTON' || framework.hasClass(e.target, 'pswp__single-tap') ) {
 					_dispatchTapEvent(e, releasePoint);
