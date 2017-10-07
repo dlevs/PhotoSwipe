@@ -41,8 +41,7 @@ _registerModule('Tap', {
 				return;
 			}
 
-			var clickedTagName = e.target.tagName.toUpperCase();
-			if (clickedTagName === 'A') {
+			if (e.target.closest('a')) {
 				return;
 			}
 
@@ -63,6 +62,8 @@ _registerModule('Tap', {
 					_dispatchTapEvent(e, releasePoint, 'mouse');
 					return;
 				}
+
+				var clickedTagName = e.target.tagName.toUpperCase();
 
 				// avoid double tap delay on buttons and elements that have class pswp__single-tap
 				if(clickedTagName === 'BUTTON' || framework.hasClass(e.target, 'pswp__single-tap') ) {
